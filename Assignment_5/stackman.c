@@ -65,40 +65,55 @@ int main(int argc, char* argv[]) {
                 stack[tos_idx]++;
                 continue;
 
-            case '<':
+            case '>':
 
-                if (tos_idx == 3) {
-                    printf("Error: stack underflow");
-                    return 1;
-                }
-                continue;
-
-            case '>': {
                 if (tos_idx == -1) {
                     printf("Error: stack underflow");
                     return 1;
                 }
 
                 int n = stack[tos_idx];
+                
 
                 if (n < 2 || n > tos_idx) {
                     printf("Error: stack underflow");
                     return 1;
                 }
 
-                int mid;
-                int end = tos_idx-1;
+                int end = tos_idx;
+                int start = end - n;
 
-                if (n % 2 == 0) {
-                    mid = n /2;
-                } else if (n % 2 > 0) {
-                    mid = (n-1)/2;
+                int temp = stack[end-1];
+                for (int i = end-1; i>start; i--) {
+                    stack[i] = stack[i-1];
                 }
-                
-                for (int i=0; i<mid; i++) {
-                    int temp = stack;
+                stack[start] = temp;
+                continue;
+
+            case '<': {
+                if (tos_idx == -1) {
+                    printf("Error: stack underflow");
+                    return 1;
                 }
+
+                int n = stack[tos_idx];
                 
+
+                if (n < 2 || n > tos_idx) {
+                    printf("Error: stack underflow");
+                    return 1;
+                }
+
+                int end = tos_idx;               
+                int start = end - n;
+                
+                int temp = stack[start];
+
+                for (int i = start; i<end-1; i++) {
+                    stack[i] = stack[i+1];
+                }
+                stack[end-1] = temp;
+
                 continue;
             }  
             case '?': {
@@ -151,13 +166,13 @@ int main(int argc, char* argv[]) {
         }
     }
     
-    // if (tos_idx == -1) {
-    //     printf("empty stack");
-    // } else {
-    //     for (int i=0; i<=tos_idx; i++) {
-    //         printf("%d ", stack[i]);
-    //     }
-    // }    
+    if (tos_idx == -1) {
+        printf("empty stack");
+    } else {
+        for (int i=0; i<tos_idx; i++) {
+            printf("%d ", stack[i]);
+        }
+    }    
 
     return 0;
 
