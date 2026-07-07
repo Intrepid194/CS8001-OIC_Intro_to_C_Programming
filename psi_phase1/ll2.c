@@ -116,23 +116,23 @@ int main()
 
   // Insert 6.  So linked list 
   // becomes 6->NULL
-  append(&head, "hi");
+  append(&head, 'h');
 
   // Insert 7 at the beginning. 
   // So linked list becomes 7->6->NULL
-  push(&head, "there");
+  push(&head, 't');
 
   // Insert 1 at the beginning. So 
   // linked list becomes 1->7->6->NULL
-  push(&head, "wassup");
+  push(&head, 'w');
 
   // Insert 4 at the end. So linked list 
   // becomes 1->7->6->4->NULL
-  append(&head, "nmu");
+  append(&head, 'u');
 
   // Insert 8, after 7. So linked list 
   // becomes 1->7->8->6->4->NULL
-  insertAfter(head->next, "ok");
+  insertAfter(head->next, 'g');
 
   printf("Created Linked list is: ");
   printList(head);

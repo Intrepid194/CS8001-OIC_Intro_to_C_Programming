@@ -1,15 +1,48 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdint.h>
+#include <stdbool.h>
 
-struct Node {
+
+
+typedef enum {
+    PVAL_NUMBER,
+    PVAL_BOOL,
+    PVAL_SYMBOL,
+    PVAL_LIST,
+    PVAL_FUNCTION,
+    PVAL_ERROR
+} pval_tag;
+
+typedef struct pval {
+    pval_tag pval_type;
+    union {
+        int64_t pval_number;
+        bool pval_bool;
+        char *pval_symbol;
+        char *pval_list;
+        char *pval_function;
+        char *pval_error;
+    };
+} pval;
+
+typedef struct Node {
     char *token;
     struct Node *next;
-};
+} Node;
+
+void printList(Node *node);
+
+char *createToken(char command);
+
+Node *createNode(char *token);
+
+void append(Node **head, char *token);
 
 int main() {
 
-    struct Node *head = NULL;
+    Node *head = NULL;
 
     while (1) {
         char *command = malloc(sizeof(char)*4097);
@@ -17,66 +50,78 @@ int main() {
 
         fgets(command, 4097, stdin);
 
-        // printf("%s", command);
-        char *temp = malloc(sizeof(char)*4097);
-        int temp_idx = 0;
-
         for (int i=0; command[i] != '\0'; i++) {
 
             switch (command[i]) {
                 case '(':
-                    struct Node *newNode = malloc(sizeof(struct Node));
-                    
-                    
-                    newNode->token = &command[i];
-                    newNode->next = NULL;
 
-                    struct Node *last = head;
-
-                    if (head == NULL) {
-                        head = newNode;
-                        continue;
-                    }
-                    while (last->next != NULL) {
-                        last = last->next;
-                    }
-
-                    last->next = newNode;
-
+                    append(&head, createToken(command[i]));
                     break;
                 case ')':
+
+                    append(&head, createToken(command[i]));
                     break;
 
                 case '+':
+                    append(&head, createToken(command[i]));
                     break;
 
                 case '-':
+                    if (i+1 < strlen(command)) {
+                        if (command[i+1] == ' ') {
+                            append(&head, createToken(command[i]));
+                        } else {
+                            char *sub = (char *)calloc(4097, sizeof(char));
+                            int sub_idx = 0;
+
+                            for (int j = i; (command[j] != '\0') && (command[j] != ' '); j++) {
+                                if (command[j] >= 48 && command[j] <= 57) {
+                                    sub[sub_idx] = command[j];
+                                    sub_idx++;
+                                }
+                                i = j;
+                            } 
+
+                            append(&head, sub);
+                        }
+                    }
+
                     break;
 
                 case '/':
+                    append(&head, createToken(command[i]));
                     break;
 
                 case ' ':
-                    temp[0] = '\0';
-                    temp_idx = 0;
-                    continue;
-
-                case '0' ... '9': case'a' ... 'z': case 'A' ... 'Z':
-
-                    temp[temp_idx] = command[i];
-                    temp_idx++;
 
                     break;
+
+                case '0' ... '9':
+                    if (i+1 < strlen(command)) {
+                        if (command[i+1] == ' ' || command[i+1] == ')') {
+                            append(&head, createToken(command[i]));
+                        } else {
+
+                            char *temp = (char *)calloc(4097, sizeof(char));
+                            int temp_idx = 0;
+
+                            for (int j = i; (command[j] != ')') && (command[j] != '\0') && (command[j] != ' '); j++) {
+                                if (command[j] >= 48 && command[j] <= 57) {
+                                    temp[temp_idx] = command[j];
+                                    temp_idx++;
+                                }
+                                i = j;
+                            } 
+
+                            append(&head, temp);
+                        }
+                    }
+
+                    break;
+
             }
         }
 
-        // char *lexer = malloc(sizeof(char)*4097);
-        // char* token = strtok(command, " ");
-
-        // while (token != NULL) {
-        //     printf("%s\n", token);
-        //     token= strtok(NULL, "");
-        // }
 
         if (command[0] == 'q') {
             free(command);
@@ -85,41 +130,54 @@ int main() {
         free(command);
     }
 
+    printList(head);
     return 0;
 }
 
-// Node *createNode(char temp[], int n) { 
+char *createToken(char command) {
 
-//     Node *newNode = (Node *)malloc(sizeof(Node));
+    char *token = malloc(sizeof(char)*2);
+    token[0] = command;
+    token[1] = '\0';
 
-//     newNode->token = (char *)(malloc(sizeof(char) * n));
-//     newNode->next = NULL;
+    return token;
+}
 
-//     return newNode;
-// }
+Node *createNode(char *token) { 
 
-// void append(Node** head, char *temp, int n) {
+    Node *newNode = (Node *)malloc(sizeof(Node));
 
-//     Node *new_node = createNode(temp, n);
+    newNode->token = token;
+    newNode->next = NULL;
 
-//     Node *last = *head;
+    return newNode;
+}
 
-//     if (*head == NULL) {
+void append(Node** head, char *token) {
 
-//         *head = new_node;
-//         return;
-//     }
+    Node *new_node = createNode(token);
 
-//     while (last->next != NULL) {
-//         last = last->next;
-//     }
+    Node *last = *head;
 
-//     last->next = new_node;
-//     return;
-// }
+    if (*head == NULL) {
 
-char parse(char command[4096]) {
+        *head = new_node;
+        return;
+    }
 
+    while (last->next != NULL) {
+        last = last->next;
+    }
 
-    return 1;
+    last->next = new_node;
+    return;
+}
+
+void printList(Node *node)
+{
+  while (node != NULL)
+  {
+     printf(" %s ", node->token);
+     node = node->next;
+  }
 }
