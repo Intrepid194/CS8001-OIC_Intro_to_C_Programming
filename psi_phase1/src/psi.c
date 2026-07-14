@@ -187,11 +187,11 @@ void parse(Node *token_list_head)
     Node* current = token_list_head;
 
     pval* new_list = NULL;
-    if (current->token == '(')
+    if (strcmp(current->token, "(\0") == 0) //parse "(" symbols")"
     {
         new_list = empty_list();
     }
-    else if (current->token[0] == '#')
+    else if (current->token[0] == '#') //parse booleans #t or #f
     {   
         bool temp = false;
 
@@ -204,7 +204,14 @@ void parse(Node *token_list_head)
         }
         pval* b = pval_bool(temp);
     }
+    else if (((current->token[0] == '-' || current->token[0] == '+') && (current->token[1] >= 48 && current->token[1] <= 58)) || (current->token[1] >= 48 && current->token[1] <= 58))
+    {
+        int64_t temp;
 
+        sscanf(current->token, "%d", &temp);
+
+        pval* number = pval_number(temp);
+    }
     
     // while (current != NULL) {
     //     if (current->token == '(') 
