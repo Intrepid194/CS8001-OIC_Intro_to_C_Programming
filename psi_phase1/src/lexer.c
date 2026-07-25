@@ -3,7 +3,7 @@
 #include <string.h>
 #include <stdint.h>
 #include <stdbool.h>
-#include "lexer.h"
+#include "../include/lexer.h"
 
 
 char *createToken(char command) {
@@ -165,6 +165,6 @@ Node *lex(Node *head, char* command) {
         
     }
 
-    free(command);
+    
     return head;
 }
