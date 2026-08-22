@@ -1,0 +1,448 @@
+psi>""
+psi>"a"
+psi>"hello world"
+psi>"\n"
+psi>"\\"
+psi>"\""
+psi>"\x00"
+psi>"a\"b"
+psi>"a\nb"
+psi>"a\x00b"
+psi>"A"
+psi>"\x00"
+psi>"\n"
+psi>"\xff"
+psi>"\xff"
+psi>"A4"
+psi>"As"
+psi>"\xdfsglk"
+psi>"\\x4"
+psi>"\\xZ9"
+psi>"\\x4z"
+psi>"\\X41"
+psi>"\x01"
+psi>"\x09"
+psi>"\x0d"
+psi>"\x1f"
+psi>"\x7f"
+psi>"\x80"
+psi>" "
+psi>"~"
+psi>"cat\\dog"
+psi>"cat\\dog"
+psi>"a\\'b"
+psi>"\\5"
+psi>"\\t"
+psi>"\\\\"
+psi>"a\\"
+psi>"\\n"
+psi>"cat\\\\dog"
+psi>"\n\n"
+psi>"\x00\x00"
+psi>"\"\""
+psi>"\xff\xff\xff"
+psi>("a" "b")
+psi>("a\"b")
+psi>("" "")
+psi>(1 "two" #t)
+psi>("x")
+psi>"(+ 1 2)"
+psi>"; not a comment"
+psi>"#t"
+psi>#t
+psi>#f
+psi>#f
+psi>#t
+psi>#f
+psi>#t
+psi>#f
+psi>#t
+psi>#f
+psi>#t
+psi>#t
+psi>#f
+psi>#t
+psi>#t
+psi>#f
+psi>#f
+psi>#f
+psi>#f
+psi>#t
+psi>#t
+psi>#t
+psi>#f
+psi>#f
+psi>$error{error: cannot divide by 0!}
+psi>0
+psi>18
+psi>-5
+psi>5
+psi>1
+psi>60
+psi>2
+psi>-1
+psi>2
+psi>-1
+psi>$error{error: cannot divide by 0!}
+psi>1
+psi>12
+psi>99
+psi>$error{error: value-error (modulo) cannot mod by 0.}
+psi>5
+psi>-7
+psi>$error{error: cannot divide by INT64_MIN}
+psi>$error{$type error: got a bool when expecting a number...}
+psi>#t
+psi>#f
+psi>#t
+psi>#t
+psi>#t
+psi>#t
+psi>#t
+psi>$error{$type error: got a string when expecting a number...}
+psi>#f
+psi>#f
+psi>#t
+psi>1
+psi>(2 3)
+psi>$error{error: value-error (head) cannot have an empy list () as an argument.}
+psi>$error{error: value-error (tail) cannot have an empy list () as an argument.}
+psi>$error{error: type-error (head) can only accept non-empty lists as an argument.}
+psi>$error{error: type-error (cons) 2nd argument must be a list (empty or non-empty).}
+psi>(1 2)
+psi>(3)
+psi>(99 97 116)
+psi>()
+psi>(97 0 98)
+psi>(255)
+psi>"cat"
+psi>"A\nB"
+psi>"\x00"
+psi>"\xff"
+psi>""
+psi>$error{error: (chr) list element > 255}
+psi>$error{error: (chr) list element < 0}
+psi>"a\x00b"
+psi>(0 255 65)
+psi>7
+psi>7
+psi>11
+psi>13
+psi>$error{$error: type-error (def) 2nd argument cannot be a protected symbol...}
+psi>$error{error: unable to find binding for symbol...}
+psi>1
+psi>2
+psi>#f
+psi>56
+psi>6
+psi>x
+psi>x
+psi>'x
+psi>'x
+psi>(+ 3 4)
+psi>$error{error: arity-error (quote) must have 1 argument.}
+psi>(quote)
+psi>$error{error: ' incomplete parse.}
+psi>bool
+psi>number
+psi>string
+psi>symbol
+psi>list
+psi>function
+psi>7
+psi>8
+psi>$error{error: cannot divide by 0!}
+psi>9
+psi>"abc"
+psi>(97 98 99)
+psi>(1 2 3)
+psi>1
+psi>CAT
+#t
+psi>#t
+psi>a"b#t
+psi>()
+psi>$error{error: inapplicable head}
+psi>#t
+psi>#f
+psi>#t
+psi>$error{error: arity-error (def) must have exactly 2 or 3 arguments.}
+psi>$error{error: unable to find binding for symbol...}
+psi>#f
+psi>#f
+psi>$builtin{+}
+psi>$builtin{*}
+psi>$builtin{quit}
+psi>$builtin{!=}
+psi>$builtin{head}
+psi>$builtin{+}
+psi>$builtin{+}
+psi>$lambda{(x) x}
+psi>$lambda{() 5}
+psi>$lambda{(x) 5}
+psi>$lambda{(x y) (if (> x y) x y)}
+psi>$lambda{(x) (* x x x)}
+psi>$lambda{(& xs) xs}
+psi>$lambda{(x y & more) x}
+psi>$lambda{(x) x}@this
+psi>$lambda{(x) (f x)}@f
+psi>$lambda{() 5}@this
+psi>$lambda{(x) (* x 2)}@fct
+psi>$lambda{() 5}@const
+psi>$lambda{(x) "cat"}
+psi>$lambda{(x) "a\"b"}
+psi>$lambda{(x) 'x}
+psi>$lambda{(x) '(1 2)}
+psi>$lambda{(x) ()}
+psi>$lambda{(x) #t}
+psi>$lambda{(x) (fn (y) (+ x y))}
+psi>($builtin{+})
+psi>($builtin{+} $builtin{*})
+psi>($lambda{(x) x})
+psi>$lambda{(x) x}
+psi>$lambda{(x) x}
+psi>$builtin{+}
+psi>$builtin{+}
+psi>function
+psi>function
+psi>$error{error: arglist-error (fn) arglist () be a list.}
+psi>$error{error: arglist-error (fn) arglist can only contain symbols.}
+psi>$error{error: arglist-error (fn) arglist cannot contain duplicate symbols.}
+psi>$error{error: arglist-error (fn) & symbol msut be only in 2nd to last position in arglist.}
+psi>$error{error: arglist-error (fn) & symbol msut be only in 2nd to last position in arglist.}
+psi>$error{error: arity-error (fn) must have minimum 2 args and maximum 3 args.}
+psi>$error{error: arity-error (fn) must have minimum 2 args and maximum 3 args.}
+psi>$error{error: type-error (fn) fn name mst be a symbol.}
+psi>$error{error: arglist-error (fn) arglist cannot contain duplicate symbols.}
+psi>$error{error: arglist-error (fn) arglist cannot contain duplicate symbols.}
+psi>$error{error: arglist-error (fn) arglist cannot contain duplicate symbols.}
+psi>5
+psi>5
+psi>49
+psi>7
+psi>5
+psi>$error{error: arity-error (evaluating fn) got different number of arguments than expected.}
+psi>$error{error: arity-error (evaluating fn) got different number of arguments than expected.}
+psi>$error{error: arity-error (evaluating fn) got different number of arguments than expected.}
+psi>1
+psi>$lambda{(x) (+ x z)}
+psi>8
+psi>100
+psi>8
+psi>$lambda{(y) (+ x y)}
+psi>18
+psi>5
+psi>20
+psi>15
+psi>$lambda{(x) (if (= x 0) 1 (* x (this (- x 1))))}@this
+psi>120
+psi>$lambda{(x) (if (= x 0) 1 (* x (fct (- x 1))))}@fct
+psi>5040
+psi>$error{error: cannot divide by 0!}
+psi>$error{error: cannot divide by 0!}
+psi>$error{error: unable to find binding for symbol...}
+psi>-5
+psi>3
+psi>(1 2 3)
+psi>"cat"
+psi>$builtin{+}
+psi>30
+psi>$cell{5}@0x4e16fc0
+psi>$cell{"cat"}@0x4e199f0
+psi>$cell{(1 2 3)}@0x4e1ce30
+psi>$cell{$builtin{+}}@0x4e1f5c0
+psi>$cell{()}@0x4e21f50
+psi>$cell{#t}@0x4e24750
+psi>$cell{$cell{5}@0x4e283e0}@0x4e28490
+psi>$cell{5}@0x4e2b3d0
+psi>$error{error: cannot divide by 0!}
+psi>$error{error: arity-error (cell) can only accept exactly 1 argument.}
+psi>$error{error: arity-error (cell) can only accept exactly 1 argument.}
+psi>$cell{5}@0x4e37f30
+psi>5
+psi>(1 2)
+psi>$error{error: type-error (!) can only accept cell as argument.}
+psi>$error{error: arity-error (!) can only accept exactly 1 argument.}
+psi>$error{error: arity-error (!) can only accept exactly 1 argument.}
+psi>6
+psi>6
+psi>6
+psi>7
+psi>$error{error: type-error (:=) can only accept cell in argument 1.}
+psi>$error{error: arity-error (:=) can only accept exactly 2 arguments.}
+psi>$error{error: arity-error (:=) can only accept exactly 2 arguments.}
+psi>$cell{193}@0x4e5d7d0
+psi>$cell{193}@0x4e63600
+psi>#f
+psi>#t
+psi>$error{error: incomplete parse  cursor not NULL.}
+psi>$cell{193}@0x4e5d7d0
+psi>#t
+psi>194
+psi>193
+psi>194
+psi>194
+psi>#f
+psi>#t
+psi>(5 $cell{4}@0x4e93a00 "5" "five")
+psi>5
+psi>(5 $cell{5}@0x4e93a00 "5" "five")
+psi>11
+psi>5
+psi>#t
+psi>6
+psi>1
+2
+3
+#t
+psi>1
+2
+"Done."
+psi>ab5
+psi>1
+$error{error: cannot divide by 0!}
+psi>$error{error: cannot divide by 0!}
+psi>$error{error: unable to find binding for symbol...}
+psi>(1 2 3)
+psi>"cat"
+psi>$cell{5}@0x4ed4da0
+psi>$builtin{+}
+psi>4
+psi>$cell{0}@0x4ee1670
+psi>2
+psi>5
+25
+psi>1
+$error{error: cannot divide by 0!}
+psi>$cell{5}@0x4eff7a0
+psi>(1 2 3)
+psi>#f
+psi>$error{error: cannot divide by 0!}
+psi>$error{error: unable to find binding for symbol...}
+psi>$error{error: arity-error (loop) can only accept exactly 1 argument.}
+psi>$error{error: arity-error (loop) can only accept exactly 1 argument.}
+psi>$cell{0}@0x4f153b0
+psi>#f
+psi>5
+psi>$cell{0}@0x4f29660
+psi>$cell{0}@0x4f2e490
+psi>#f
+psi>1005720
+psi>$cell{0}@0x4ff1750
+psi>$error{error: cannot divide by 0!}
+psi>1
+psi>$cell{0}@0x5003930
+psi>1
+2
+3
+4
+#f
+psi>$cell{()}@0x5017990
+psi>$cell{0}@0x501c7c0
+psi>#f
+psi>(2 1 0)
+psi>()
+psi>(1 2 3)
+psi>(3 12)
+psi>($cell{5}@0x503f8f0)
+psi>#t
+psi>2
+psi>#f
+psi>#f
+psi>3
+psi>#f
+psi>2
+psi>13
+psi>#f
+psi>7
+psi>$error{error: cannot divide by 0!}
+psi>$error{error: cannot divide by 0!}
+psi>5
+psi>3
+psi>"hello"
+psi>5
+psi>5
+psi>25
+psi>(5 7)
+psi>81
+psi>(5 25 125)
+psi>99
+psi>5
+psi>36
+psi>5
+psi>"big"
+psi>$error{error: cannot divide by 0!}
+psi>$error{error: cannot divide by 0!}
+psi>5
+psi>10
+psi>5
+psi>$error{arity-error: (let) accepts a minimum of 1 argument which is the body.}
+psi>5
+psi>$error{arity-error: (let) can only accept odd number of arguments.}
+psi>$error{error: unable to find binding for symbol...}
+psi>"$cell{5}@0x513b8f0"
+psi>"$cell{$cell{5}@0x5140f90}@0x5141040"
+psi>"$cell{(1 2)}@0x5145e80"
+psi>"$cell{5}@0x514aaf0"
+psi>"(1 2 3)"
+psi>"$lambda{(x) x}"
+psi>"$lambda{(x) x}@f"
+psi>"$cell{$cell{5}@0x5168b80}@0x5168c30"
+psi>$error{"boom"}
+psi>$error{5}
+psi>$error{my-error}
+psi>$error{(type-error + 2)}
+psi>$error{()}
+psi>$error{#t}
+psi>$error{"nested"}
+psi>"\"a\\x00b\""
+psi>"(1 \"two\" 3)"
+psi>"$cell{$cell{5}@0x5194230}@0x51942e0"
+psi>$error{"x"}
+psi>"$lambda{(x) x}@f"
+psi>5
+#t
+psi>"cat"
+#t
+psi>sym
+#t
+psi>#t
+#t
+psi>(1 2 3)
+#t
+psi>1 2 3
+#t
+psi>1 "two" three
+#t
+psi>
+#t
+psi>""
+#t
+psi>"a\nb"
+#t
+psi>"a\"b"
+#t
+psi>$cell{5}@0x51cd710
+#t
+psi>$builtin{+}
+#t
+psi>$lambda{(x) x}
+#t
+psi>5
+#t
+psi>5
+psi>"cat"
+psi>#t
+psi>3
+psi>x
+psi>12
+psi>3
+psi>3
+psi>10
+psi>10
+psi>15
+psi>$error{error: cannot divide by 0!}
+psi>$error{error: cannot divide by 0!}
+psi>$error{arity-error: (eval) accepts a exactly 1 argument.}
+psi>$error{arity-error: (eval) accepts a exactly 1 argument.}
+psi>No meaningful input found. Exiting program...

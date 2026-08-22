@@ -1,0 +1,110 @@
+(load "__start.psi")
+(load "test-common.psi")
+
+"To decode the message, enter 'Farisa' when asked for a password.
+If your PSI implementation works, this program will decode it."
+
+"You will need to have 64-bit integers for this to work properly."
+
+(def e-c (x)
+  (if (<= 48 x 57) (- x 48)
+    (if (<= 65 x 90) (- x 55)
+      (if (<= 97 x 122) (- x 61)
+        (if (= x 45) 62
+          (if (= x 46) 63
+            (if (= x 10) 64
+	      (if (= x 33) 65
+	        (if (= x 47) 66
+		  (if (= x 58) 67
+		    (if (= x 60) 68
+		      (if (= x 62) 69 70))))))))))))
+
+(def d-c (x)
+  (if (<= 0 x 9) (+ x 48)
+    (if (<= 10 x 35) (+ x 55)
+      (if (<= 36 x 61) (+ x 61)
+        (if (= x 62) 45
+          (if (= x 63) 46
+	    (if (= x 64) 10
+	      (if (= x 65) 33
+	        (if (= x 66) 47
+		  (if (= x 67) 58
+		    (if (= x 68) 60
+		      (if (= x 69) 62 32))))))))))))
+
+(def N 25411697)
+
+(def e-b (x1 x2 x3 x4)
+  (+ x1 (* 71 (+ x2 (* 71 (+ x3 (* 71 x4)))))))
+
+(def d-b (n)
+  (list (% n 71) (% (/ n 71) 71) (% (/ n 71 71) 71) (/ n 71 71 71)))
+
+(def get-key (str)
+  (let c (ord str)
+       acc (cell 0)
+       left (cell c)
+       recur (fn recur ()
+                (if (!= (! left) ())
+		  (do (:= acc (% (+ (* (! acc) 137) (head (! left))) N))
+		      (:= left (tail (! left)))
+		      (recur))
+		  (! acc)))
+       (recur)))
+
+(def encode (str)
+  (let s1 (ord str)
+       s2 (map e-c s1)
+       s3 (map (fn (c)
+            (let l (length c)
+	         c1 (if (< l 4)
+		      (append c (repeat (- 4 l) 70))
+		      c)
+		 (apply e-b c1))) (chunk 4 s2))
+       ct (cell (list 0))
+       pt (cell s3)
+       recur (fn recur ()
+         (if (= (! pt) ())
+	   (reverse (! ct))
+           (let pn (head (! pt))
+                cl (head (! ct))
+                cn (% (* 7856794 (% (+ pn cl) N)) N)
+	        (do (:= pt (tail (! pt)))
+	            (:= ct (cons cn (! ct)))
+		    (recur)))))
+       db (tail (recur))
+       s4 (reduce append () (map d-b db))
+       (chr (map d-c s4))))
+
+(def decode (key str)
+  (let s1 (ord str)
+       s2 (map e-c s1)
+       s3 (map (fn (c) (apply e-b c)) (chunk 4 s2))
+       cl (cell 0)
+       ct (cell s3)
+       pt (cell ())
+       recur (fn recur ()
+         (if (= (! ct) ())
+	   (reverse (! pt))
+	   (let cn (head (! ct))
+	        pn (% (- (% (* key cn) N) (! cl)) N)
+		(do (:= cl cn)
+		    (:= pt (cons pn (! pt)))
+		    (:= ct (tail (! ct)))
+		    (recur)))))
+       db (recur)
+       s4 (reduce append () (map d-b db))
+       (chr (map d-c s4))))
+
+(def message
+"olVUJWOd:lb57hpQPU9ORy \nah33L7gLgx1-2YlxA:v26HFn-dfSv/pm<jr>4fvLONr4p9fyM-DIIkqCbXZlzW!RU8N:eiQJP2NdIP4mWboJbenDAmmRF0DA30ygZPXGGUdyMV!Fm4cfVLtml27wYbiuZjE6v.Gw<pchKUruCihNur9JFp9:mhlPDFV>Hpa!f> ebcMPikWrj!Xfv!V6wuXxiP>-KY BaDK>CD6GiXIQnsPJHB>uB8lZE4npDotn<.SBAH 47e2y2MXYZ/rDDA7vXp>UxdhH2.Y2yX!H>l!e5vIb\n6-hXC\nxzk-.uenoGF1IHbQYcuYKWwW9")
+
+(if (is-bound 'io-off)
+  (decode (get-key "fakepw") message)
+  (do (output "Password: ")
+      (let i "Farisa" ; Change back to (input)
+           pw (chr (ord i))
+           (do
+	     (output "\n")
+	     (output (decode (get-key pw) message))
+	     (output "\n")))))

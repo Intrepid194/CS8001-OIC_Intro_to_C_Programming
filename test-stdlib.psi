@@ -1,0 +1,91 @@
+"Make sure stdlib is in __start.psi"
+
+(load "test-common.psi")
+
+(check (range 0 5) '(0 1 2 3 4) "range-A")
+(check (range 0 0) () "range-B")
+(should-fail (try (range 0 ''14)) "range-C")
+
+(check (repeat 5 'a) '(a a a a a) "repeat-A")
+(check (repeat 0 'a) () "repeat-B")
+
+(check (let z (repeat 2 (cell 0))
+            (do (:= (head z) 17)
+ 	        (! (head (tail z))))) 17 "repeat-C")
+
+
+(check (map (fn (x) (+ x 1)) '(1 2 3)) '(2 3 4) "map-A")
+(should-fail (try (map (2 3 4) (fn (x) (+ x 1)))) "map-B")
+
+(check (filter (fn (x) (= (% x 2) 0)) (range 17 26)) '(18 20 22 24) "filter")
+(check (reduce + 0 (range 0 20)) 190 "reduce")
+
+(check (get 6 (ord "caterpillar")) 105 "get")
+(check (append '(1 2 3) '(4 5 6)) '(1 2 3 4 5 6) "append-A")
+(check (append '(1 2 3) ()) '(1 2 3) "append-B")
+(check (append () '(4 5 6)) '(4 5 6) "append-C")
+(check (append () ()) () "append-D")
+
+(check (concat ()) () "concat-A")
+(check (concat '((1 2 3))) '(1 2 3) "concat-B")
+(check (concat '((1 2 3) () (4 5) (6))) '(1 2 3 4 5 6) "concat-C")
+(should-fail (try (concat '((1 2 3) () (4 5) 6))) "concat-D")
+
+(check (butlast '(1 2 3 4)) '(1 2 3) "butlast-A")
+(check (butlast '(1)) () "butlast-B")
+(check (butlast ()) () "butlast-C")
+
+(check (last '(1 2 3 4)) 4 "last-A")
+(check (last '(1)) 1 "last-B")
+(should-fail (try (last ())) "last-C")
+
+(check (take 3 '(1 2 3 4)) '(1 2 3) "take-A")
+(check (take 0 '(1 2 3 4)) () "take-B")
+(check (take 6 '(1 2 3 4)) '(1 2 3 4) "take-C")
+
+(check (drop 3 '(1 2 3 4)) '(4) "drop-A")
+(check (drop 0 '(1 2 3 4)) '(1 2 3 4) "drop-B")
+(check (drop 6 '(1 2 3 4)) () "drop-C")
+
+(check (chunk 1 '(1 2 3 4 5)) '((1) (2) (3) (4) (5)) "chunk-A")
+(check (chunk 3 '(1 2 3 4 5)) '((1 2 3) (4 5)) "chunk-B")
+(check (chunk 6 '(1 2 3 4 5)) '((1 2 3 4 5)) "chunk-C")
+(should-fail (try (chunk 0 '(1 2 3 4))) "chunk-D")
+
+(check (length ()) 0 "length-A")
+(check (length '(1 2 3 4)) 4 "length-B")
+(check (length (range -7 137)) 144 "length-C")
+
+(check (reverse ()) () "reverse-A")
+(check (reverse '(1 2 3 4 5 6)) '(6 5 4 3 2 1) "B-esrever")
+
+(check (apply + ()) 0 "apply-A")
+(check (apply + '(1 2 3)) 6 "apply-B")
+(check (apply + 1 2 '(3)) 6 "apply-B")
+(check (apply take '(2 (1 2 3))) '(1 2) "apply-D")
+(check (apply (fn (x y z) (+ x z)) '(1 5 6)) 7 "apply-E")
+(check (apply (fn (x y z) (+ x z)) 1 '(5 6)) 7 "apply-F")
+
+"A small integration test."
+
+(def prime (n)
+  (if (< n 2) #f
+    (let go
+      (fn go (k)
+        (if (> (* k k) n) #t
+	  (if (= (% n k) 0) #f
+	    (go (+ k 1)))))
+      (go 2))))
+
+
+(def prime-square-sum (n)
+  (reduce + 0
+    (map (fn (x) (* x x))
+      (filter prime (range 2 (+ n 1))))))
+
+(check (prime-square-sum 5)   38    "prime-square-sum-A")
+(check (prime-square-sum 30)  2397  "prime-square-sum-B")
+(check (prime-square-sum 100) 65796 "prime-square-sum-C")
+
+(if (not (is-bound 'io-off))
+  (status))

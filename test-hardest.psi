@@ -1,0 +1,43 @@
+(def rules '(((1  1 2) (0 -1 4))
+             ((1  1 3) (0  1 6))
+	     ((1 -1 3) (1 -1 1))
+	     ((0 -1 5) (1  1 7))
+	     ((1 -1 6) (0  1 2))
+	     ((0  1 3) (0  1 5))))
+     
+(def left (cell ()))
+(def right (cell ()))
+(def state (cell 1))
+
+(def move-left ()
+  (if (= (! left) ())
+    (:= right (cons 0 (! right)))
+    (let a (head (! left))
+      (do
+        (:= right (cons a (! right)))
+	(:= left  (tail (! left)))))))
+
+(def move-right ()
+  (if (= (! right) ())
+    (:= left (cons 0 (! left)))
+    (let a (head (! right))
+      (do
+        (:= left (cons a (! left)))
+	(:= right (tail (! right)))))))
+
+(loop
+  (if (!= (! state) 7)
+    (let rt (! right)
+         rd (if (= rt ()) 0 (head rt))
+	 rule (get rd (get (- (! state) 1) rules))
+	 ns (head rule)
+	 mv (get 1 rule)
+	 to (get 2 rule)
+	 (do
+	   (:= state to)
+	   (if (= rt ()) (:= right (cons ns ()))
+	     (:= right (cons ns (tail rt))))
+	   (if (> mv 0) (move-right) (move-left))
+	   #t))))
+
+(print "OK")

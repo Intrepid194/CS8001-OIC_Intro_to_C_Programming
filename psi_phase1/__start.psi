@@ -1,0 +1,79 @@
+(def list (& xs) xs)
+
+(def length (xs)
+  (if (= xs ()) 0
+    (+ 1 (length (tail xs)))))
+
+(def range (s e)
+  (if (>= s e) ()
+    (cons s (range (+ s 1) e))))
+
+(def repeat (n x)
+  (if (<= n 0) () (cons x (repeat (- n 1) x))))
+
+(def map (f xs)
+  (if (= xs ()) ()
+    (cons (f (head xs)) (map f (tail xs)))))
+
+(def filter (f xs)
+  (if (= xs ()) ()
+    (let h (head xs)
+      (if (f h) (cons h (filter f (tail xs)))
+        (filter f (tail xs))))))
+
+(def reduce (f init xs)
+  (if (= xs ()) init
+    (let h (head xs)
+      (reduce f (f init h) (tail xs)))))
+
+(def get (n xs)
+  (if (= n 0) (head xs)
+    (get (- n 1) (tail xs))))
+
+(def append (xs ys)
+  (if (= xs ()) ys
+    (cons (head xs) (append (tail xs) ys))))
+
+(def concat (lists)
+  (reduce append () lists))
+
+(def butlast (xs)
+  (if (or (= xs ()) (= (tail xs) ()))
+    ()
+    (cons (head xs) (butlast (tail xs)))))
+
+(def last (xs)
+  (if (= xs ())
+    (error "last : empty list")
+    (if (= (tail xs) ())
+      (head xs)
+      (last (tail xs)))))
+
+(def take (n xs)
+  (if (or (= n 0) (= xs ()))
+    ()
+    (cons (head xs) (take (- n 1) (tail xs)))))
+
+(def drop (n xs)
+  (if (= n 0)
+    xs
+    (if (= xs ())
+      ()
+      (drop (- n 1) (tail xs)))))
+
+(def chunk (n xs)
+  (if (<= n 0)
+    (error "chunk : needs positive chunk size")
+    (if (= xs ()) ()
+      (cons (take n xs) (chunk n (drop n xs))))))
+
+(def reverse (xs)
+  (let recur
+       (fn recur (acc xs)
+         (if (= xs ()) acc
+	   (recur (cons (head xs) acc) (tail xs))))
+       (recur () xs)))
+
+(def apply (f & xs)
+  (let args (append (butlast xs) (last xs))
+    (eval (cons f (map (fn (a) (list 'quote a)) args)))))

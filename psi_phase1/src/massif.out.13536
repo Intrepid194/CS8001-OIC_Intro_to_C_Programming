@@ -1,0 +1,1151 @@
+desc: (none)
+cmd: ./psi test-hardest.psi
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=3855126
+mem_heap_B=1896669
+mem_heap_extra_B=85515
+mem_stacks_B=0
+heap_tree=peak
+n6: 1896669 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1364301 0x400860C: lex (lexer.c:292)
+  n1: 1364301 0x4004CF1: parse_help (eval.c:1281)
+   n2: 1364301 0x4006EA4: eval_tree (eval.c:1965)
+    n1: 979183 0x4006EF7: eval_tree (eval.c:1974)
+     n0: 979183 0x4009BCD: main (psi.c:69)
+    n0: 385118 0x4009BCD: main (psi.c:69)
+ n1: 221238 0x400874C: lex (lexer.c:321)
+  n1: 221238 0x4004CF1: parse_help (eval.c:1281)
+   n2: 221238 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 118813 0x4009BCD: main (psi.c:69)
+    n1: 102425 0x4006EF7: eval_tree (eval.c:1974)
+     n0: 102425 0x4009BCD: main (psi.c:69)
+ n1: 213044 0x400826D: lex (lexer.c:219)
+  n1: 213044 0x4004CF1: parse_help (eval.c:1281)
+   n2: 213044 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 163880 0x4009BCD: main (psi.c:69)
+    n1: 49164 0x4006EF7: eval_tree (eval.c:1974)
+     n0: 49164 0x4009BCD: main (psi.c:69)
+ n0: 53625 in 23 places, all below massif's threshold (1.00%)
+ n1: 23976 0x4007BCD: createNode (lexer.c:33)
+  n1: 23976 0x4007C20: append (lexer.c:62)
+   n0: 23976 in 9 places, all below massif's threshold (1.00%)
+ n1: 20485 0x4007FBB: lex (lexer.c:174)
+  n1: 20485 0x4004CF1: parse_help (eval.c:1281)
+   n1: 20485 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 20485 0x4009BCD: main (psi.c:69)
+#-----------
+snapshot=2
+#-----------
+time=436788988
+mem_heap_B=818467
+mem_heap_extra_B=117573
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=681442006
+mem_heap_B=824729
+mem_heap_extra_B=122863
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=887202539
+mem_heap_B=829987
+mem_heap_extra_B=127085
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=1179843927
+mem_heap_B=812740
+mem_heap_extra_B=110908
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=1423661768
+mem_heap_B=837977
+mem_heap_extra_B=133007
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=1830027817
+mem_heap_B=808074
+mem_heap_extra_B=109582
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=2060632608
+mem_heap_B=818909
+mem_heap_extra_B=114707
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=2417021168
+mem_heap_B=780402
+mem_heap_extra_B=86950
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=2773410920
+mem_heap_B=777795
+mem_heap_extra_B=85149
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=3052943472
+mem_heap_B=810539
+mem_heap_extra_B=109621
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=3437313766
+mem_heap_B=799457
+mem_heap_extra_B=101751
+mem_stacks_B=0
+heap_tree=detailed
+n10: 799457 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 385118 0x400860C: lex (lexer.c:292)
+  n1: 385118 0x4004CF1: parse_help (eval.c:1281)
+   n2: 385118 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 385118 0x4009BCD: main (psi.c:69)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 163880 0x400826D: lex (lexer.c:219)
+  n1: 163880 0x4004CF1: parse_help (eval.c:1281)
+   n2: 163880 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 163880 0x4009BCD: main (psi.c:69)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 118813 0x400874C: lex (lexer.c:321)
+  n1: 118813 0x4004CF1: parse_help (eval.c:1281)
+   n2: 118813 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 118813 0x4009BCD: main (psi.c:69)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n0: 29449 in 21 places, all below massif's threshold (1.00%)
+ n2: 22776 0x4001652: create_binding (env.c:91)
+  n2: 21432 0x40015C3: copy_env (env.c:68)
+   n1: 18456 0x4006148: eval_tree (eval.c:1685)
+    n1: 18456 0x4005664: eval_tree (eval.c:1490)
+     n2: 18456 0x4006EF7: eval_tree (eval.c:1974)
+      n1: 15936 0x4006EF7: eval_tree (eval.c:1974)
+       n0: 15936 0x4009BCD: main (psi.c:69)
+      n0: 2520 in 1 place, below massif's threshold (1.00%)
+   n0: 2976 in 2 places, all below massif's threshold (1.00%)
+  n0: 1344 in 36 places, all below massif's threshold (1.00%)
+ n2: 22672 0x4009FE9: pval_add (pval_utils.c:71)
+  n2: 20352 0x4009F99: pval_copy (pval_utils.c:56)
+   n2: 13584 0x4009F87: pval_copy (pval_utils.c:56)
+    n1: 9280 0x4009F87: pval_copy (pval_utils.c:56)
+     n0: 9280 in 10 places, all below massif's threshold (1.00%)
+    n0: 4304 in 11 places, all below massif's threshold (1.00%)
+   n0: 6768 in 15 places, all below massif's threshold (1.00%)
+  n0: 2320 in 21 places, all below massif's threshold (1.00%)
+ n1: 20485 0x4007FBB: lex (lexer.c:174)
+  n1: 20485 0x4004CF1: parse_help (eval.c:1281)
+   n1: 20485 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 20485 0x4009BCD: main (psi.c:69)
+ n2: 14040 0x400AA77: pval_symbol (pvals.c:95)
+  n2: 12576 0x4009E80: pval_copy (pval_utils.c:24)
+   n2: 11736 0x4009F87: pval_copy (pval_utils.c:56)
+    n1: 9336 0x4009F87: pval_copy (pval_utils.c:56)
+     n0: 9336 in 5 places, all below massif's threshold (1.00%)
+    n0: 2400 in 5 places, all below massif's threshold (1.00%)
+   n0: 840 in 5 places, all below massif's threshold (1.00%)
+  n0: 1464 in 6 places, all below massif's threshold (1.00%)
+ n2: 11784 0x400ABB5: empty_list (pvals.c:141)
+  n1: 10608 0x4009F62: pval_copy (pval_utils.c:51)
+   n0: 10608 in 18 places, all below massif's threshold (1.00%)
+  n0: 1176 in 14 places, all below massif's threshold (1.00%)
+ n2: 10440 0x400A9EB: pval_number (pvals.c:73)
+  n2: 10296 0x4009E60: pval_copy (pval_utils.c:20)
+   n1: 10200 0x4009F87: pval_copy (pval_utils.c:56)
+    n0: 10200 in 13 places, all below massif's threshold (1.00%)
+   n0: 96 in 12 places, all below massif's threshold (1.00%)
+  n0: 144 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=13
+#-----------
+time=3646969114
+mem_heap_B=792666
+mem_heap_extra_B=96310
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=3926510699
+mem_heap_B=844404
+mem_heap_extra_B=137276
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=4310881229
+mem_heap_B=812753
+mem_heap_extra_B=110959
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=4485598027
+mem_heap_B=814060
+mem_heap_extra_B=113212
+mem_stacks_B=0
+heap_tree=detailed
+n10: 814060 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 385118 0x400860C: lex (lexer.c:292)
+  n1: 385118 0x4004CF1: parse_help (eval.c:1281)
+   n2: 385118 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 385118 0x4009BCD: main (psi.c:69)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 163880 0x400826D: lex (lexer.c:219)
+  n1: 163880 0x4004CF1: parse_help (eval.c:1281)
+   n2: 163880 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 163880 0x4009BCD: main (psi.c:69)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 118813 0x400874C: lex (lexer.c:321)
+  n1: 118813 0x4004CF1: parse_help (eval.c:1281)
+   n2: 118813 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 118813 0x4009BCD: main (psi.c:69)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n0: 31484 in 21 places, all below massif's threshold (1.00%)
+ n2: 26720 0x4009FE9: pval_add (pval_utils.c:71)
+  n2: 24192 0x4009F99: pval_copy (pval_utils.c:56)
+   n2: 15616 0x4009F87: pval_copy (pval_utils.c:56)
+    n1: 10736 0x4009F87: pval_copy (pval_utils.c:56)
+     n0: 10736 in 10 places, all below massif's threshold (1.00%)
+    n0: 4880 in 11 places, all below massif's threshold (1.00%)
+   n0: 8576 in 15 places, all below massif's threshold (1.00%)
+  n0: 2528 in 21 places, all below massif's threshold (1.00%)
+ n2: 25008 0x4001652: create_binding (env.c:91)
+  n2: 23640 0x40015C3: copy_env (env.c:68)
+   n1: 18456 0x4006148: eval_tree (eval.c:1685)
+    n1: 18456 0x4005664: eval_tree (eval.c:1490)
+     n2: 18456 0x4006EF7: eval_tree (eval.c:1974)
+      n1: 15936 0x4006EF7: eval_tree (eval.c:1974)
+       n0: 15936 0x4009BCD: main (psi.c:69)
+      n0: 2520 in 1 place, below massif's threshold (1.00%)
+   n0: 5184 in 2 places, all below massif's threshold (1.00%)
+  n0: 1368 in 36 places, all below massif's threshold (1.00%)
+ n1: 20485 0x4007FBB: lex (lexer.c:174)
+  n1: 20485 0x4004CF1: parse_help (eval.c:1281)
+   n1: 20485 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 20485 0x4009BCD: main (psi.c:69)
+ n2: 15624 0x400AA77: pval_symbol (pvals.c:95)
+  n2: 14112 0x4009E80: pval_copy (pval_utils.c:24)
+   n2: 13200 0x4009F87: pval_copy (pval_utils.c:56)
+    n1: 10512 0x4009F87: pval_copy (pval_utils.c:56)
+     n0: 10512 in 5 places, all below massif's threshold (1.00%)
+    n0: 2688 in 5 places, all below massif's threshold (1.00%)
+   n0: 912 in 5 places, all below massif's threshold (1.00%)
+  n0: 1512 in 6 places, all below massif's threshold (1.00%)
+ n2: 13512 0x400A9EB: pval_number (pvals.c:73)
+  n2: 13368 0x4009E60: pval_copy (pval_utils.c:20)
+   n1: 13248 0x4009F87: pval_copy (pval_utils.c:56)
+    n0: 13248 in 13 places, all below massif's threshold (1.00%)
+   n0: 120 in 12 places, all below massif's threshold (1.00%)
+  n0: 144 in 3 places, all below massif's threshold (1.00%)
+ n2: 13416 0x400ABB5: empty_list (pvals.c:141)
+  n2: 12120 0x4009F62: pval_copy (pval_utils.c:51)
+   n1: 9624 0x4009F87: pval_copy (pval_utils.c:56)
+    n0: 9624 in 12 places, all below massif's threshold (1.00%)
+   n0: 2496 in 17 places, all below massif's threshold (1.00%)
+  n0: 1296 in 14 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=17
+#-----------
+time=4751155626
+mem_heap_B=850927
+mem_heap_extra_B=141249
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=5002723516
+mem_heap_B=848279
+mem_heap_extra_B=139641
+mem_stacks_B=0
+heap_tree=detailed
+n11: 848279 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 385118 0x400860C: lex (lexer.c:292)
+  n1: 385118 0x4004CF1: parse_help (eval.c:1281)
+   n2: 385118 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 385118 0x4009BCD: main (psi.c:69)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 163880 0x400826D: lex (lexer.c:219)
+  n1: 163880 0x4004CF1: parse_help (eval.c:1281)
+   n2: 163880 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 163880 0x4009BCD: main (psi.c:69)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 118813 0x400874C: lex (lexer.c:321)
+  n1: 118813 0x4004CF1: parse_help (eval.c:1281)
+   n2: 118813 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 118813 0x4009BCD: main (psi.c:69)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n2: 36112 0x4009FE9: pval_add (pval_utils.c:71)
+  n2: 31408 0x4009F99: pval_copy (pval_utils.c:56)
+   n2: 22272 0x4009F87: pval_copy (pval_utils.c:56)
+    n1: 15712 0x4009F87: pval_copy (pval_utils.c:56)
+     n0: 15712 in 10 places, all below massif's threshold (1.00%)
+    n0: 6560 in 11 places, all below massif's threshold (1.00%)
+   n0: 9136 in 15 places, all below massif's threshold (1.00%)
+  n0: 4704 in 21 places, all below massif's threshold (1.00%)
+ n2: 29352 0x4001652: create_binding (env.c:91)
+  n2: 27864 0x40015C3: copy_env (env.c:68)
+   n1: 18456 0x4006148: eval_tree (eval.c:1685)
+    n1: 18456 0x4005664: eval_tree (eval.c:1490)
+     n2: 18456 0x4006EF7: eval_tree (eval.c:1974)
+      n1: 15936 0x4006EF7: eval_tree (eval.c:1974)
+       n0: 15936 0x4009BCD: main (psi.c:69)
+      n0: 2520 in 1 place, below massif's threshold (1.00%)
+   n0: 9408 in 2 places, all below massif's threshold (1.00%)
+  n0: 1488 in 36 places, all below massif's threshold (1.00%)
+ n0: 24863 in 20 places, all below massif's threshold (1.00%)
+ n1: 20485 0x4007FBB: lex (lexer.c:174)
+  n1: 20485 0x4004CF1: parse_help (eval.c:1281)
+   n1: 20485 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 20485 0x4009BCD: main (psi.c:69)
+ n2: 19704 0x400AA77: pval_symbol (pvals.c:95)
+  n2: 18048 0x4009E80: pval_copy (pval_utils.c:24)
+   n2: 17040 0x4009F87: pval_copy (pval_utils.c:56)
+    n2: 13848 0x4009F87: pval_copy (pval_utils.c:56)
+     n1: 10296 0x4009F87: pval_copy (pval_utils.c:56)
+      n0: 10296 in 5 places, all below massif's threshold (1.00%)
+     n0: 3552 in 4 places, all below massif's threshold (1.00%)
+    n0: 3192 in 5 places, all below massif's threshold (1.00%)
+   n0: 1008 in 5 places, all below massif's threshold (1.00%)
+  n0: 1656 in 6 places, all below massif's threshold (1.00%)
+ n2: 19272 0x400A9EB: pval_number (pvals.c:73)
+  n2: 19128 0x4009E60: pval_copy (pval_utils.c:20)
+   n1: 16200 0x4009F87: pval_copy (pval_utils.c:56)
+    n0: 16200 in 13 places, all below massif's threshold (1.00%)
+   n0: 2928 in 12 places, all below massif's threshold (1.00%)
+  n0: 144 in 3 places, all below massif's threshold (1.00%)
+ n2: 18408 0x400ABB5: empty_list (pvals.c:141)
+  n2: 16656 0x4009F62: pval_copy (pval_utils.c:51)
+   n1: 13512 0x4009F87: pval_copy (pval_utils.c:56)
+    n0: 13512 in 12 places, all below massif's threshold (1.00%)
+   n0: 3144 in 17 places, all below massif's threshold (1.00%)
+  n0: 1752 in 14 places, all below massif's threshold (1.00%)
+ n2: 12272 0x400ABD9: empty_list (pvals.c:146)
+  n1: 11104 0x4009F62: pval_copy (pval_utils.c:51)
+   n0: 11104 in 18 places, all below massif's threshold (1.00%)
+  n0: 1168 in 14 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=19
+#-----------
+time=5317184478
+mem_heap_B=773077
+mem_heap_extra_B=81491
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=5568752173
+mem_heap_B=818034
+mem_heap_extra_B=116614
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=5820321812
+mem_heap_B=805006
+mem_heap_extra_B=105274
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=6071889526
+mem_heap_B=862767
+mem_heap_extra_B=148305
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=6386349170
+mem_heap_B=818169
+mem_heap_extra_B=114167
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=6826595091
+mem_heap_B=825300
+mem_heap_extra_B=119828
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=7203948332
+mem_heap_B=872844
+mem_heap_extra_B=154436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=7455516556
+mem_heap_B=819236
+mem_heap_extra_B=114876
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=7884733632
+mem_heap_B=772771
+mem_heap_extra_B=80789
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=8114240329
+mem_heap_B=807542
+mem_heap_extra_B=106962
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=8343747974
+mem_heap_B=829782
+mem_heap_extra_B=124242
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=8688010256
+mem_heap_B=821247
+mem_heap_extra_B=116241
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=8917516719
+mem_heap_B=808926
+mem_heap_extra_B=107130
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=9147025203
+mem_heap_B=850244
+mem_heap_extra_B=140764
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=9376531668
+mem_heap_B=836357
+mem_heap_extra_B=127587
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=9606038170
+mem_heap_B=795249
+mem_heap_extra_B=98247
+mem_stacks_B=0
+heap_tree=detailed
+n10: 795249 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 385118 0x400860C: lex (lexer.c:292)
+  n1: 385118 0x4004CF1: parse_help (eval.c:1281)
+   n2: 385118 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 385118 0x4009BCD: main (psi.c:69)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 163880 0x400826D: lex (lexer.c:219)
+  n1: 163880 0x4004CF1: parse_help (eval.c:1281)
+   n2: 163880 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 163880 0x4009BCD: main (psi.c:69)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 118813 0x400874C: lex (lexer.c:321)
+  n1: 118813 0x4004CF1: parse_help (eval.c:1281)
+   n2: 118813 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 118813 0x4009BCD: main (psi.c:69)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n0: 28745 in 21 places, all below massif's threshold (1.00%)
+ n2: 22392 0x4001652: create_binding (env.c:91)
+  n2: 21072 0x40015C3: copy_env (env.c:68)
+   n1: 18456 0x4006148: eval_tree (eval.c:1685)
+    n1: 18456 0x4005664: eval_tree (eval.c:1490)
+     n2: 18456 0x4006EF7: eval_tree (eval.c:1974)
+      n1: 15936 0x4006EF7: eval_tree (eval.c:1974)
+       n0: 15936 0x4009BCD: main (psi.c:69)
+      n0: 2520 in 1 place, below massif's threshold (1.00%)
+   n0: 2616 in 2 places, all below massif's threshold (1.00%)
+  n0: 1320 in 36 places, all below massif's threshold (1.00%)
+ n2: 21424 0x4009FE9: pval_add (pval_utils.c:71)
+  n2: 19344 0x4009F99: pval_copy (pval_utils.c:56)
+   n1: 12928 0x4009F87: pval_copy (pval_utils.c:56)
+    n0: 12928 in 12 places, all below massif's threshold (1.00%)
+   n0: 6416 in 15 places, all below massif's threshold (1.00%)
+  n0: 2080 in 21 places, all below massif's threshold (1.00%)
+ n1: 20485 0x4007FBB: lex (lexer.c:174)
+  n1: 20485 0x4004CF1: parse_help (eval.c:1281)
+   n1: 20485 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 20485 0x4009BCD: main (psi.c:69)
+ n2: 13056 0x400AA77: pval_symbol (pvals.c:95)
+  n2: 11640 0x4009E80: pval_copy (pval_utils.c:24)
+   n1: 10896 0x4009F87: pval_copy (pval_utils.c:56)
+    n0: 10896 in 6 places, all below massif's threshold (1.00%)
+   n0: 744 in 5 places, all below massif's threshold (1.00%)
+  n0: 1416 in 6 places, all below massif's threshold (1.00%)
+ n2: 11184 0x400ABB5: empty_list (pvals.c:141)
+  n1: 10080 0x4009F62: pval_copy (pval_utils.c:51)
+   n0: 10080 in 18 places, all below massif's threshold (1.00%)
+  n0: 1104 in 14 places, all below massif's threshold (1.00%)
+ n2: 10152 0x400A9EB: pval_number (pvals.c:73)
+  n2: 10008 0x4009E60: pval_copy (pval_utils.c:20)
+   n1: 9984 0x4009F87: pval_copy (pval_utils.c:56)
+    n0: 9984 in 13 places, all below massif's threshold (1.00%)
+   n0: 24 in 12 places, all below massif's threshold (1.00%)
+  n0: 144 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=35
+#-----------
+time=9835544696
+mem_heap_B=807969
+mem_heap_extra_B=106623
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=10065053365
+mem_heap_B=803982
+mem_heap_extra_B=104906
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=10409316157
+mem_heap_B=882207
+mem_heap_extra_B=159953
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=10638822942
+mem_heap_B=859204
+mem_heap_extra_B=146204
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=10868329808
+mem_heap_B=801121
+mem_heap_extra_B=103415
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=11097838589
+mem_heap_B=805394
+mem_heap_extra_B=106510
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=11327347692
+mem_heap_B=835083
+mem_heap_extra_B=130173
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=11671609314
+mem_heap_B=805731
+mem_heap_extra_B=106197
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=12015869785
+mem_heap_B=854365
+mem_heap_extra_B=143323
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=12245377029
+mem_heap_B=779579
+mem_heap_extra_B=85917
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=12474883454
+mem_heap_B=819958
+mem_heap_extra_B=116730
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=12704390245
+mem_heap_B=863564
+mem_heap_extra_B=148836
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=13048650334
+mem_heap_B=856367
+mem_heap_extra_B=144529
+mem_stacks_B=0
+heap_tree=detailed
+n11: 856367 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 385118 0x400860C: lex (lexer.c:292)
+  n1: 385118 0x4004CF1: parse_help (eval.c:1281)
+   n2: 385118 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 385118 0x4009BCD: main (psi.c:69)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 163880 0x400826D: lex (lexer.c:219)
+  n1: 163880 0x4004CF1: parse_help (eval.c:1281)
+   n2: 163880 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 163880 0x4009BCD: main (psi.c:69)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 118813 0x400874C: lex (lexer.c:321)
+  n1: 118813 0x4004CF1: parse_help (eval.c:1281)
+   n2: 118813 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 118813 0x4009BCD: main (psi.c:69)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n2: 39312 0x4009FE9: pval_add (pval_utils.c:71)
+  n2: 33808 0x4009F99: pval_copy (pval_utils.c:56)
+   n2: 22272 0x4009F87: pval_copy (pval_utils.c:56)
+    n1: 15712 0x4009F87: pval_copy (pval_utils.c:56)
+     n0: 15712 in 10 places, all below massif's threshold (1.00%)
+    n0: 6560 in 11 places, all below massif's threshold (1.00%)
+   n0: 11536 in 15 places, all below massif's threshold (1.00%)
+  n0: 5504 in 21 places, all below massif's threshold (1.00%)
+ n2: 29352 0x4001652: create_binding (env.c:91)
+  n2: 27864 0x40015C3: copy_env (env.c:68)
+   n1: 18456 0x4006148: eval_tree (eval.c:1685)
+    n1: 18456 0x4005664: eval_tree (eval.c:1490)
+     n2: 18456 0x4006EF7: eval_tree (eval.c:1974)
+      n1: 15936 0x4006EF7: eval_tree (eval.c:1974)
+       n0: 15936 0x4009BCD: main (psi.c:69)
+      n0: 2520 in 1 place, below massif's threshold (1.00%)
+   n0: 9408 in 2 places, all below massif's threshold (1.00%)
+  n0: 1488 in 36 places, all below massif's threshold (1.00%)
+ n0: 24863 in 20 places, all below massif's threshold (1.00%)
+ n2: 24120 0x400A9EB: pval_number (pvals.c:73)
+  n2: 23976 0x4009E60: pval_copy (pval_utils.c:20)
+   n1: 19824 0x4009F87: pval_copy (pval_utils.c:56)
+    n0: 19824 in 13 places, all below massif's threshold (1.00%)
+   n0: 4152 in 12 places, all below massif's threshold (1.00%)
+  n0: 144 in 3 places, all below massif's threshold (1.00%)
+ n1: 20485 0x4007FBB: lex (lexer.c:174)
+  n1: 20485 0x4004CF1: parse_help (eval.c:1281)
+   n1: 20485 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 20485 0x4009BCD: main (psi.c:69)
+ n2: 19704 0x400AA77: pval_symbol (pvals.c:95)
+  n2: 18048 0x4009E80: pval_copy (pval_utils.c:24)
+   n2: 17040 0x4009F87: pval_copy (pval_utils.c:56)
+    n2: 13848 0x4009F87: pval_copy (pval_utils.c:56)
+     n1: 10296 0x4009F87: pval_copy (pval_utils.c:56)
+      n0: 10296 in 5 places, all below massif's threshold (1.00%)
+     n0: 3552 in 4 places, all below massif's threshold (1.00%)
+    n0: 3192 in 5 places, all below massif's threshold (1.00%)
+   n0: 1008 in 5 places, all below massif's threshold (1.00%)
+  n0: 1656 in 6 places, all below massif's threshold (1.00%)
+ n2: 18432 0x400ABB5: empty_list (pvals.c:141)
+  n2: 16656 0x4009F62: pval_copy (pval_utils.c:51)
+   n1: 13512 0x4009F87: pval_copy (pval_utils.c:56)
+    n0: 13512 in 12 places, all below massif's threshold (1.00%)
+   n0: 3144 in 17 places, all below massif's threshold (1.00%)
+  n0: 1776 in 14 places, all below massif's threshold (1.00%)
+ n2: 12288 0x400ABD9: empty_list (pvals.c:146)
+  n1: 11104 0x4009F62: pval_copy (pval_utils.c:51)
+   n0: 11104 in 18 places, all below massif's threshold (1.00%)
+  n0: 1184 in 14 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=48
+#-----------
+time=13278157199
+mem_heap_B=793346
+mem_heap_extra_B=96686
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=13507664442
+mem_heap_B=859204
+mem_heap_extra_B=146156
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=13682381266
+mem_heap_B=779031
+mem_heap_extra_B=84489
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=13857098633
+mem_heap_B=848244
+mem_heap_extra_B=139628
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=14031815441
+mem_heap_B=803253
+mem_heap_extra_B=103203
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=14206532678
+mem_heap_B=842237
+mem_heap_extra_B=134491
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=14381249497
+mem_heap_B=831918
+mem_heap_extra_B=122578
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=14555966314
+mem_heap_B=809268
+mem_heap_extra_B=108868
+mem_stacks_B=0
+heap_tree=detailed
+n10: 809268 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 385118 0x400860C: lex (lexer.c:292)
+  n1: 385118 0x4004CF1: parse_help (eval.c:1281)
+   n2: 385118 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 385118 0x4009BCD: main (psi.c:69)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 163880 0x400826D: lex (lexer.c:219)
+  n1: 163880 0x4004CF1: parse_help (eval.c:1281)
+   n2: 163880 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 163880 0x4009BCD: main (psi.c:69)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 118813 0x400874C: lex (lexer.c:321)
+  n1: 118813 0x4004CF1: parse_help (eval.c:1281)
+   n2: 118813 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 118813 0x4009BCD: main (psi.c:69)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n0: 30700 in 21 places, all below massif's threshold (1.00%)
+ n2: 25616 0x4009FE9: pval_add (pval_utils.c:71)
+  n2: 23264 0x4009F99: pval_copy (pval_utils.c:56)
+   n2: 15280 0x4009F87: pval_copy (pval_utils.c:56)
+    n1: 10384 0x4009F87: pval_copy (pval_utils.c:56)
+     n0: 10384 in 10 places, all below massif's threshold (1.00%)
+    n0: 4896 in 11 places, all below massif's threshold (1.00%)
+   n0: 7984 in 15 places, all below massif's threshold (1.00%)
+  n0: 2352 in 21 places, all below massif's threshold (1.00%)
+ n2: 23808 0x4001652: create_binding (env.c:91)
+  n2: 22416 0x40015C3: copy_env (env.c:68)
+   n1: 18456 0x4006148: eval_tree (eval.c:1685)
+    n1: 18456 0x4005664: eval_tree (eval.c:1490)
+     n2: 18456 0x4006EF7: eval_tree (eval.c:1974)
+      n1: 15936 0x4006EF7: eval_tree (eval.c:1974)
+       n0: 15936 0x4009BCD: main (psi.c:69)
+      n0: 2520 in 1 place, below massif's threshold (1.00%)
+   n0: 3960 in 2 places, all below massif's threshold (1.00%)
+  n0: 1392 in 36 places, all below massif's threshold (1.00%)
+ n1: 20485 0x4007FBB: lex (lexer.c:174)
+  n1: 20485 0x4004CF1: parse_help (eval.c:1281)
+   n1: 20485 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 20485 0x4009BCD: main (psi.c:69)
+ n2: 14832 0x400AA77: pval_symbol (pvals.c:95)
+  n2: 13368 0x4009E80: pval_copy (pval_utils.c:24)
+   n2: 12528 0x4009F87: pval_copy (pval_utils.c:56)
+    n1: 10008 0x4009F87: pval_copy (pval_utils.c:56)
+     n0: 10008 in 5 places, all below massif's threshold (1.00%)
+    n0: 2520 in 5 places, all below massif's threshold (1.00%)
+   n0: 840 in 5 places, all below massif's threshold (1.00%)
+  n0: 1464 in 6 places, all below massif's threshold (1.00%)
+ n2: 13080 0x400A9EB: pval_number (pvals.c:73)
+  n2: 12936 0x4009E60: pval_copy (pval_utils.c:20)
+   n1: 12792 0x4009F87: pval_copy (pval_utils.c:56)
+    n0: 12792 in 13 places, all below massif's threshold (1.00%)
+   n0: 144 in 12 places, all below massif's threshold (1.00%)
+  n0: 144 in 3 places, all below massif's threshold (1.00%)
+ n2: 12936 0x400ABB5: empty_list (pvals.c:141)
+  n2: 11712 0x4009F62: pval_copy (pval_utils.c:51)
+   n1: 9384 0x4009F87: pval_copy (pval_utils.c:56)
+    n0: 9384 in 12 places, all below massif's threshold (1.00%)
+   n0: 2328 in 17 places, all below massif's threshold (1.00%)
+  n0: 1224 in 14 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=56
+#-----------
+time=14730683173
+mem_heap_B=823091
+mem_heap_extra_B=117133
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=14905400846
+mem_heap_B=860687
+mem_heap_extra_B=147089
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=15080117677
+mem_heap_B=778591
+mem_heap_extra_B=84241
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=15254834904
+mem_heap_B=801606
+mem_heap_extra_B=103266
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=15429552319
+mem_heap_B=872604
+mem_heap_extra_B=154196
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=15604269261
+mem_heap_B=835059
+mem_heap_extra_B=130125
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=15778986063
+mem_heap_B=819242
+mem_heap_extra_B=114862
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=15953703300
+mem_heap_B=860444
+mem_heap_extra_B=146900
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=16128420160
+mem_heap_B=837233
+mem_heap_extra_B=129479
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=16303136988
+mem_heap_B=781387
+mem_heap_extra_B=86549
+mem_stacks_B=0
+heap_tree=detailed
+n10: 781387 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 385118 0x400860C: lex (lexer.c:292)
+  n1: 385118 0x4004CF1: parse_help (eval.c:1281)
+   n2: 385118 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 385118 0x4009BCD: main (psi.c:69)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 163880 0x400826D: lex (lexer.c:219)
+  n1: 163880 0x4004CF1: parse_help (eval.c:1281)
+   n2: 163880 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 163880 0x4009BCD: main (psi.c:69)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 118813 0x400874C: lex (lexer.c:321)
+  n1: 118813 0x4004CF1: parse_help (eval.c:1281)
+   n2: 118813 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 118813 0x4009BCD: main (psi.c:69)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n0: 25699 in 21 places, all below massif's threshold (1.00%)
+ n2: 20784 0x4001652: create_binding (env.c:91)
+  n2: 19488 0x40015C3: copy_env (env.c:68)
+   n1: 18456 0x4006148: eval_tree (eval.c:1685)
+    n1: 18456 0x4005664: eval_tree (eval.c:1490)
+     n2: 18456 0x4006EF7: eval_tree (eval.c:1974)
+      n1: 15936 0x4006EF7: eval_tree (eval.c:1974)
+       n0: 15936 0x4009BCD: main (psi.c:69)
+      n0: 2520 in 1 place, below massif's threshold (1.00%)
+   n0: 1032 in 2 places, all below massif's threshold (1.00%)
+  n0: 1296 in 36 places, all below massif's threshold (1.00%)
+ n1: 20485 0x4007FBB: lex (lexer.c:174)
+  n1: 20485 0x4004CF1: parse_help (eval.c:1281)
+   n1: 20485 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 20485 0x4009BCD: main (psi.c:69)
+ n2: 17712 0x4009FE9: pval_add (pval_utils.c:71)
+  n2: 15888 0x4009F99: pval_copy (pval_utils.c:56)
+   n1: 9456 0x4009F87: pval_copy (pval_utils.c:56)
+    n0: 9456 in 12 places, all below massif's threshold (1.00%)
+   n0: 6432 in 15 places, all below massif's threshold (1.00%)
+  n0: 1824 in 21 places, all below massif's threshold (1.00%)
+ n2: 10152 0x400A9EB: pval_number (pvals.c:73)
+  n2: 10008 0x4009E60: pval_copy (pval_utils.c:20)
+   n1: 9984 0x4009F87: pval_copy (pval_utils.c:56)
+    n0: 9984 in 13 places, all below massif's threshold (1.00%)
+   n0: 24 in 12 places, all below massif's threshold (1.00%)
+  n0: 144 in 3 places, all below massif's threshold (1.00%)
+ n1: 9816 0x400AA77: pval_symbol (pvals.c:95)
+  n0: 9816 in 7 places, all below massif's threshold (1.00%)
+ n1: 8928 0x4007BCD: createNode (lexer.c:33)
+  n1: 8928 0x4007C20: append (lexer.c:62)
+   n0: 8928 in 9 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=66
+#-----------
+time=16477854307
+mem_heap_B=853965
+mem_heap_extra_B=142971
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=67
+#-----------
+time=16652571306
+mem_heap_B=872364
+mem_heap_extra_B=154100
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=68
+#-----------
+time=16827288129
+mem_heap_B=822269
+mem_heap_extra_B=119275
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=17002005912
+mem_heap_B=864367
+mem_heap_extra_B=149329
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=70
+#-----------
+time=17176723048
+mem_heap_B=808822
+mem_heap_extra_B=107506
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=71
+#-----------
+time=17351440658
+mem_heap_B=813633
+mem_heap_extra_B=112567
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=72
+#-----------
+time=17526157624
+mem_heap_B=851534
+mem_heap_extra_B=138674
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=73
+#-----------
+time=17700874442
+mem_heap_B=845779
+mem_heap_extra_B=136573
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=74
+#-----------
+time=17875591517
+mem_heap_B=866247
+mem_heap_extra_B=150441
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=75
+#-----------
+time=18050308523
+mem_heap_B=835379
+mem_heap_extra_B=126525
+mem_stacks_B=0
+heap_tree=detailed
+n10: 835379 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 385118 0x400860C: lex (lexer.c:292)
+  n1: 385118 0x4004CF1: parse_help (eval.c:1281)
+   n2: 385118 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 385118 0x4009BCD: main (psi.c:69)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 163880 0x400826D: lex (lexer.c:219)
+  n1: 163880 0x4004CF1: parse_help (eval.c:1281)
+   n2: 163880 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 163880 0x4009BCD: main (psi.c:69)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 118813 0x400874C: lex (lexer.c:321)
+  n1: 118813 0x4004CF1: parse_help (eval.c:1281)
+   n2: 118813 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 118813 0x4009BCD: main (psi.c:69)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n2: 34784 0x4009FE9: pval_add (pval_utils.c:71)
+  n2: 32240 0x4009F99: pval_copy (pval_utils.c:56)
+   n2: 17088 0x4009F87: pval_copy (pval_utils.c:56)
+    n1: 11840 0x4009F87: pval_copy (pval_utils.c:56)
+     n0: 11840 in 10 places, all below massif's threshold (1.00%)
+    n0: 5248 in 11 places, all below massif's threshold (1.00%)
+   n0: 15152 in 15 places, all below massif's threshold (1.00%)
+  n0: 2544 in 21 places, all below massif's threshold (1.00%)
+ n0: 32403 in 21 places, all below massif's threshold (1.00%)
+ n2: 25152 0x4001652: create_binding (env.c:91)
+  n2: 23784 0x40015C3: copy_env (env.c:68)
+   n1: 18456 0x4006148: eval_tree (eval.c:1685)
+    n1: 18456 0x4005664: eval_tree (eval.c:1490)
+     n2: 18456 0x4006EF7: eval_tree (eval.c:1974)
+      n1: 15936 0x4006EF7: eval_tree (eval.c:1974)
+       n0: 15936 0x4009BCD: main (psi.c:69)
+      n0: 2520 in 1 place, below massif's threshold (1.00%)
+   n0: 5328 in 2 places, all below massif's threshold (1.00%)
+  n0: 1368 in 36 places, all below massif's threshold (1.00%)
+ n2: 24000 0x400A9EB: pval_number (pvals.c:73)
+  n2: 23856 0x4009E60: pval_copy (pval_utils.c:20)
+   n1: 23712 0x4009F87: pval_copy (pval_utils.c:56)
+    n0: 23712 in 13 places, all below massif's threshold (1.00%)
+   n0: 144 in 12 places, all below massif's threshold (1.00%)
+  n0: 144 in 3 places, all below massif's threshold (1.00%)
+ n1: 20485 0x4007FBB: lex (lexer.c:174)
+  n1: 20485 0x4004CF1: parse_help (eval.c:1281)
+   n1: 20485 0x4006EA4: eval_tree (eval.c:1965)
+    n0: 20485 0x4009BCD: main (psi.c:69)
+ n2: 16344 0x400AA77: pval_symbol (pvals.c:95)
+  n2: 14832 0x4009E80: pval_copy (pval_utils.c:24)
+   n2: 13920 0x4009F87: pval_copy (pval_utils.c:56)
+    n1: 11136 0x4009F87: pval_copy (pval_utils.c:56)
+     n0: 11136 in 5 places, all below massif's threshold (1.00%)
+    n0: 2784 in 5 places, all below massif's threshold (1.00%)
+   n0: 912 in 5 places, all below massif's threshold (1.00%)
+  n0: 1512 in 6 places, all below massif's threshold (1.00%)
+ n2: 14400 0x400ABB5: empty_list (pvals.c:141)
+  n2: 13056 0x4009F62: pval_copy (pval_utils.c:51)
+   n1: 10464 0x4009F87: pval_copy (pval_utils.c:56)
+    n0: 10464 in 12 places, all below massif's threshold (1.00%)
+   n0: 2592 in 17 places, all below massif's threshold (1.00%)
+  n0: 1344 in 14 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=76
+#-----------
+time=18225026003
+mem_heap_B=855484
+mem_heap_extra_B=143940
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=77
+#-----------
+time=18399743135
+mem_heap_B=794609
+mem_heap_extra_B=96879
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=78
+#-----------
+time=18574459937
+mem_heap_B=822198
+mem_heap_extra_B=116714
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=79
+#-----------
+time=18749176741
+mem_heap_B=861196
+mem_heap_extra_B=147412
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=80
+#-----------
+time=18923894482
+mem_heap_B=821420
+mem_heap_extra_B=117628
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=81
+#-----------
+time=19098611817
+mem_heap_B=814991
+mem_heap_extra_B=111273
+mem_stacks_B=0
+heap_tree=empty

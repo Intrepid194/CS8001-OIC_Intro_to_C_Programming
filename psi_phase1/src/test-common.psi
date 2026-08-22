@@ -1,0 +1,22 @@
+(def pass-ctr (cell 0))
+(def fail-ctr (cell 0))
+
+(def check (expr target name)
+  (if (= expr target)
+    (:= pass-ctr (+ 1 (! pass-ctr)))
+    (do
+      (print "Test failed: " name)
+      (:= fail-ctr (+ 1 (! fail-ctr))))))
+
+(def should-fail (x name)
+  (check (head x) #f name))
+
+(def is-bound (sym)
+  (if (= (type sym) 'symbol)
+    (head (try (eval sym)))
+    (error "is-bound : requires symbol")))
+
+(def status ()
+  (do
+    (output (str (! pass-ctr)) " tests passed.\n")
+    (output (str (! fail-ctr)) " tests failed.\n")))

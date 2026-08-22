@@ -1,0 +1,32 @@
+(def io-off #t)
+
+"You are not graded on your intepreter's performance, but if you'd
+like to know how your implementation stacks up, compile it at -O3 and
+apply it to this file.
+
+Example:
+
+$ gcc -O3 -o psi psi.c
+$ time ./psi test-perf.psi
+
+If your leak checker says there are no leaks, your interpreter probably
+has no leaks.
+
+You should be satisfied with any time under 5 minutes and peak memory
+usage under 100 MB.
+"
+
+(def load-file-test (n filename)
+  (let load-file-ctr (cell 0)
+    (do
+      (:= load-file-ctr 0)
+      (loop
+        (if (< (! load-file-ctr) n)
+          (do
+	    (load filename)
+	    (:= load-file-ctr (+ 1 (! load-file-ctr)))))))))
+
+(load-file-test 300 "test-basic.psi")
+(load-file-test  40 "test-stdlib.psi")
+(load-file-test   5 "test-maz.psi")
+(print "OK")
